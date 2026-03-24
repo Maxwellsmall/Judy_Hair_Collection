@@ -4,15 +4,15 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     text: "The hair was so soft and beautiful ",
-    name: "Favour",
+    name: "Ortega",
   },
   {
     text: "Exactly what I ordered, I love it!",
-    name: "Chiejine",
+    name: "Laura",
   },
   {
     text: "Fast delivery and great quality!",
-    name: "Ofili",
+    name: "Samantha",
   },
 ];
 

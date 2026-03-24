@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { ShoppingCart } from "lucide-react";
+import { Heart, LucideShoppingCart } from "lucide-react";
 import logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [cartCount, setCartCount] = useState(2); 
+  const [cartCount, setCartCount] = useState(2);
+  const [wishCount, setWishCount] = useState(3);
 
   return (
     <>
@@ -36,7 +37,19 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <div className="relative cursor-pointer">
-              <ShoppingCart size={24} />
+            
+             <Link to="/wishlist">
+              <Heart size={24} />
+             </Link>
+
+              {wishCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                  {wishCount}
+                </span>
+              )}
+            </div>
+            <div className="relative cursor-pointer">
+              <LucideShoppingCart size={24} />
 
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
