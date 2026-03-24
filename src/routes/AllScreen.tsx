@@ -1,7 +1,7 @@
 import {Routes, Route} from "react-router-dom"
 import StaticLayout from "../layout/StaticLayout"
 import Home from '../pages/Home'
-import Contact from "../pages/Contact"
+import Category from "../pages/Category"
 import About from "../pages/About"
 import Hairstyles from "../pages/Hairstyles"
 import Dashboard from "../pages/Admin/index"
@@ -14,7 +14,7 @@ const AllScreen = () => {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="hairstyles" element={<Hairstyles />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="category" element={<Category />} />
       </Route>
 
       <Route path="/admin" element={<Dashboard />} />
