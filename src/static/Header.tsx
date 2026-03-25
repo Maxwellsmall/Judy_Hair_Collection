@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Heart, LucideShoppingCart } from "lucide-react";
 import logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 const Header = () => {
-  const [cartCount, setCartCount] = useState(2);
+   const { cart } = useContext(CartContext);
+
   const [wishCount, setWishCount] = useState(3);
 
   return (
@@ -51,11 +54,11 @@ const Header = () => {
             <div className="relative cursor-pointer">
               <LucideShoppingCart size={24} />
 
-              {cartCount > 0 && (
+              
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                  {cartCount}
+                  {cart.length}
                 </span>
-              )}
+              
             </div>
 
             <a
