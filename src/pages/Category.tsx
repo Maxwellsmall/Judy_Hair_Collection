@@ -1,9 +1,7 @@
-import React from 'react'
-
-const Categpry = () => {
+const Category = () => {
   return (
-    <div>Categpry</div>
+    <div>Category</div>
   )
 }
 
-export default Categpry
+export default Category

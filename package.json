@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "context": "powershell -ExecutionPolicy Bypass -File ./scripts/generate-context.ps1",
+    "context:bat": ".\\scripts\\generate-context.bat"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",

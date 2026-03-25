@@ -1,91 +1,129 @@
-import React from "react";
+import { generateWhatsAppLink, WhatsAppMessages } from "../lib/whatsapp";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  const whatsappLink = generateWhatsAppLink(
+    "2347068383089",
+    WhatsAppMessages.generalGreeting
+  );
+
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "Products", href: "/hairstyles" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const customerService = [
+    { name: "Shipping Info", href: "#" },
+    { name: "Returns Policy", href: "#" },
+    { name: "FAQ", href: "#" },
+    { name: "Support", href: "#" },
+  ];
+
+  const socialLinks = [
+    { name: "Instagram", href: "https://instagram.com/judyhair", icon: "📷" },
+    { name: "Facebook", href: "#", icon: "📘" },
+    { name: "Twitter", href: "#", icon: "🐦" },
+    { name: "WhatsApp", href: whatsappLink, icon: "💬" },
+  ];
+
   return (
-    <>
-      <footer className="bg-black text-white mt-16">
-        <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-neutral-900 text-white mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section */}
           <div>
-            <h2 className="text-xl font-bold mb-3">Judy Hair Collection</h2>
-            <p className="text-sm text-gray-400">
+            <h2 className="text-xl font-bold font-heading mb-4">
+              Judy Hair Collection
+            </h2>
+            <p className="text-neutral-400 font-body leading-relaxed mb-6">
               Premium hair for confident and stylish women. Quality you can
               trust.
             </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-3">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <a href="/" className="hover:text-white">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/hairstyles" className="hover:text-white">
-                  Hairstyles
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-3">Help</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <a href="#" className="hover:text-white">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Delivery Info
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Return Policy
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-3">Contact</h3>
-            <p className="text-sm text-gray-400">
-              WhatsApp: +234 XXX XXX XXXX
-            </p>
-            <p className="text-sm text-gray-400 mt-2">
-              Instagram: @judyhair
-            </p>
-            <p className="text-sm text-gray-400 mt-2">Lagos, Nigeria</p>
-
             <a
-              href="https://wa.me/234XXXXXXXXXX"
+              href={whatsappLink}
               target="_blank"
-              className="inline-block mt-4 bg-white text-black px-4 py-2 rounded-lg text-sm"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-whatsapp-green px-6 py-3 font-semibold text-white transition-colors hover:bg-whatsapp-green/90"
             >
               Chat on WhatsApp
             </a>
           </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold font-heading text-base mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Customer Service */}
+          <div>
+            <h3 className="font-semibold font-heading text-base mb-4">
+              Customer Service
+            </h3>
+            <ul className="space-y-3">
+              {customerService.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div>
+            <h3 className="font-semibold font-heading text-base mb-4">
+              Connect
+            </h3>
+            <ul className="space-y-3">
+              {socialLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150 flex items-center gap-2"
+                  >
+                    <span>{link.icon}</span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 pt-6 border-t border-neutral-800">
+              <p className="text-neutral-400 font-body text-sm">
+                <span className="font-semibold text-white">Location:</span> Lagos, Nigeria
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
-          © {new Date().getFullYear()} Judy Hair Collection. All rights
-          reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 font-body text-sm">
+          <p>&copy; {currentYear} Judy Hair Collection. All rights reserved.</p>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 

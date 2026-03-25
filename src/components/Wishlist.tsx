@@ -1,4 +1,3 @@
-import React from "react";
 import hair2 from "../assets/hair2.jpg"
 import hair3 from "../assets/hair3.jpg"
 import hair4 from "../assets/hair4.jpg"

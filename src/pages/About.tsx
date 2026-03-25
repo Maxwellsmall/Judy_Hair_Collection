@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Hair5 from "../assets/hair5.jpg";
 

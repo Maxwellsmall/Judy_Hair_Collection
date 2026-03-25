@@ -4,21 +4,18 @@ import WhyChoseUs from "../components/WhyChoseUs";
 import CustomOrder from "../components/CustomOrder";
 import Products from "../components/Products";
 import ShopByStyle from "../components/ShopByStyle";
+import FloatingWhatsAppButton from "../components/FloatingWhatsAppButton";
 
 const Home = () => {
   return (
-    <div className="text-black bg-gray-100 w-full flex flex-col justify-center items-center">
-      <div>
-        <Hero />
-
-        <ShopByStyle />
-
-        <Products />
-
-        <CustomOrder />
-        <Testimonials />
-        <WhyChoseUs />
-      </div>
+    <div className="w-full flex flex-col">
+      <Hero />
+      <ShopByStyle />
+      <Products />
+      <CustomOrder />
+      <Testimonials />
+      <WhyChoseUs />
+      <FloatingWhatsAppButton position="bottom-right" />
     </div>
   );
 };
