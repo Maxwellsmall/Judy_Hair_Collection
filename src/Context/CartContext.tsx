@@ -14,6 +14,7 @@ const addToCart = (item) => {
     }
 
     return [...prev, { ...item, qty:  1}];
+    console.log(item)
   });
 };
 

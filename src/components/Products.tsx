@@ -76,7 +76,7 @@ const Products = () => {
 
                 <div className="mt-auto pt-5 space-y-3">
                   <button 
-                   onClick={() => addToCart("")}className="w-full border py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-150">
+                   onClick={() => addToCart(item)}className="w-full border py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-150">
                     Add to Cart
                   </button>
 
