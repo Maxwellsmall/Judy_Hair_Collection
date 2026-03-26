@@ -1,0 +1,3 @@
+## Qwen Added Memories
+- User is deploying Judy_Hair_Collection e-commerce project. They want to understand deployment in simple terms - specifically deploying both frontend and backend together on their local PC (not online). They need explanations without technical jargon and want to understand what ngrok means in their context.
+- User wants ONE single deployment on Vercel that runs both frontend and backend together (not split). They are willing to migrate from React/Vite to Next.js if needed to achieve this. User is leaving workplace and wants a plan saved in .md file for later implementation.

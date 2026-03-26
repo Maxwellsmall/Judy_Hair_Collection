@@ -1,88 +1,85 @@
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import type { ProductCardProps, ProductCategory } from "./ProductCard";
+import type { ProductCardProps } from "./ProductCard";
 import { WhatsAppMessages } from "../lib/whatsapp";
-
-// Sample product data - replace with actual product images and names
-import hair1 from "../assets/hair1.jpg";
-import hair2 from "../assets/hair2.jpg";
-import hair3 from "../assets/hair3.jpg";
-import hair4 from "../assets/hair4.jpg";
-import hair5 from "../assets/hair5.jpg";
-import hair6 from "../assets/hair6.jpg";
-
-const productsData: ProductCardProps[] = [
-  {
-    id: "1",
-    image: hair2,
-    category: "Custom Wigs",
-    productName: "Bone Straight Wig",
-    whatsappMessage: WhatsAppMessages.productInquiry("Bone Straight Wig"),
-    priceLabel: "Inquire for Price",
-  },
-  {
-    id: "2",
-    image: hair3,
-    category: "Custom Wigs",
-    productName: "Curly Wig",
-    whatsappMessage: WhatsAppMessages.productInquiry("Curly Wig"),
-    priceLabel: "Inquire for Price",
-  },
-  {
-    id: "3",
-    image: hair4,
-    category: "Bundles",
-    productName: "Vietnam Hair Bundle",
-    whatsappMessage: WhatsAppMessages.productInquiry("Vietnam Hair Bundle"),
-    priceLabel: "Inquire for Price",
-  },
-  {
-    id: "4",
-    image: hair5,
-    category: "Bundles",
-    productName: "Premium Hair Bundle",
-    whatsappMessage: WhatsAppMessages.productInquiry("Premium Hair Bundle"),
-    priceLabel: "Inquire for Price",
-  },
-  {
-    id: "5",
-    image: hair6,
-    category: "Custom Wigs",
-    productName: "Body Wave Wig",
-    whatsappMessage: WhatsAppMessages.productInquiry("Body Wave Wig"),
-    priceLabel: "Inquire for Price",
-  },
-  {
-    id: "6",
-    image: hair1,
-    category: "Hair Care",
-    productName: "Hair Care Kit",
-    whatsappMessage: WhatsAppMessages.productInquiry("Hair Care Kit"),
-    priceLabel: "Inquire for Price",
-  },
-];
+import type { Product } from "../lib/api";
+import { productsApi } from "../lib/api";
 
 interface ProductGalleryProps {
   title?: string;
   subtitle?: string;
-  products?: ProductCardProps[];
-  categoryFilter?: ProductCategory;
+  categoryFilter?: string;
+  featuredOnly?: boolean;
 }
 
 /**
  * ProductGallery Component
- * 
- * Displays a grid of products in the catalog.
- * Optionally filter by category.
+ *
+ * Displays a grid of products fetched from the API.
+ * Optionally filter by category or featured status.
  */
 const ProductGallery = ({
   title = "Featured Collection",
   subtitle = "Explore our premium selection of wigs, bundles, and hair care products",
-  products = productsData,
   categoryFilter,
+  featuredOnly = false,
 }: ProductGalleryProps) => {
-  const filteredProducts = categoryFilter
-    ? products.filter((p) => p.category === categoryFilter)
-    : products;
+  const [products, setProducts] = useState<ProductCardProps[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await productsApi.getAll({
+          category: categoryFilter,
+          featured: featuredOnly ? true : undefined,
+          limit: 6,
+        });
+        
+        if (response.success && response.data) {
+          const productCards: ProductCardProps[] = response.data.products.map((product: Product) => ({
+            id: product._id,
+            image: product.images[0] || "",
+            category: product.category as "Bundles" | "Custom Wigs" | "Hair Care",
+            productName: product.name,
+            whatsappMessage: WhatsAppMessages.productInquiry(product.name),
+            priceLabel: `₦${product.price.toLocaleString()}`,
+          }));
+          setProducts(productCards);
+        }
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError("Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [categoryFilter, featuredOnly]);
+
+  if (loading) {
+    return (
+      <section id="products" className="py-16 sm:py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 font-heading mb-3">
+              {title}
+            </h2>
+            <p className="text-lg text-neutral-600 font-body max-w-2xl mx-auto">
+              Loading products...
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="animate-pulse bg-neutral-200 rounded-xl h-80" />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="products" className="py-16 sm:py-20 bg-neutral-50">
@@ -93,20 +90,20 @@ const ProductGallery = ({
             {title}
           </h2>
           <p className="text-lg text-neutral-600 font-body max-w-2xl mx-auto">
-            {subtitle}
+            {error ? error : subtitle}
           </p>
         </div>
 
         {/* Product Grid */}
-        {filteredProducts.length > 0 ? (
+        {products.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
         ) : (
           <p className="text-center text-neutral-500 font-body">
-            No products found in this category.
+            {error || "No products found in this category."}
           </p>
         )}
       </div>

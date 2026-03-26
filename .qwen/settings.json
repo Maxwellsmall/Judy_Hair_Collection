@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(timeout *)",
+      "Bash(curl *)",
+      "Bash(powershell *)",
+      "Bash(taskkill *)",
+      "Bash(start-sleep *)",
+      "Bash(npx *)",
+      "Bash(select-object *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
-  }
+  },
+  "$version": 3
 }

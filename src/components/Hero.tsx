@@ -1,7 +1,8 @@
-
+import { useEffect, useState } from "react";
 import Hair3 from "../assets/hair3.jpg";
 import { generateWhatsAppLink, WhatsAppMessages } from "../lib/whatsapp";
 import { ArrowRight } from "lucide-react";
+import { productsApi } from "../lib/api";
 
 interface HeroProps {
   backgroundImage?: string;
@@ -16,7 +17,7 @@ interface HeroProps {
 
 const defaultProps: HeroProps = {
   backgroundImage: Hair3,
-  title: "Luxury Hair Collection",
+  title: "Judy Hair Collection",
   subtitle: "Premium Quality Wigs & Bundles",
   supportingText:
     "Discover premium wigs and hairstyles designed to give you confidence and elegance. Up to 40% off on selected items.",
@@ -28,7 +29,6 @@ const defaultProps: HeroProps = {
 
 const Hero = (props: Partial<HeroProps>) => {
   const {
-    backgroundImage = defaultProps.backgroundImage,
     title = defaultProps.title,
     subtitle = defaultProps.subtitle,
     supportingText = defaultProps.supportingText,
@@ -36,6 +36,28 @@ const Hero = (props: Partial<HeroProps>) => {
     secondaryCtaText = defaultProps.secondaryCtaText,
     secondaryCtaLink = defaultProps.secondaryCtaLink,
   } = props;
+
+  const [heroImage, setHeroImage] = useState<string>(defaultProps.backgroundImage!);
+
+  useEffect(() => {
+    // Fetch featured products to get a hero image
+    const fetchHeroImage = async () => {
+      try {
+        const response = await productsApi.getFeatured(1);
+        if (response.success && response.data && response.data.products.length > 0) {
+          const featuredProduct = response.data.products[0];
+          if (featuredProduct.images && featuredProduct.images.length > 0) {
+            setHeroImage(featuredProduct.images[0]);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch hero image:", err);
+        // Use default image as fallback
+      }
+    };
+
+    fetchHeroImage();
+  }, []);
 
   const whatsappLink = generateWhatsAppLink(
     "2347068383089",
@@ -47,7 +69,7 @@ const Hero = (props: Partial<HeroProps>) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src={backgroundImage}
+          src={heroImage}
           alt="Luxury Hair Collection"
           className="w-full h-full object-cover"
         />
