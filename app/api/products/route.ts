@@ -97,6 +97,7 @@ export async function POST(request: Request) {
 
     const body = await request.json();
 
+    await connectDB();
     const product = await Product.create(body);
 
     return NextResponse.json(

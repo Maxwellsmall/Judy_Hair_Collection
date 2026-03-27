@@ -47,6 +47,7 @@ export async function POST(request: Request) {
       );
     }
 
+    await connectDB();
     const category = await Category.create(body);
 
     return NextResponse.json(
