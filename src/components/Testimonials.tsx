@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -68,3 +70,5 @@ export function Testimonials() {
     </section>
   );
 }
+
+export default Testimonials;

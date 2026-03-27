@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import type { ProductCardProps } from "./ProductCard";
@@ -41,7 +43,7 @@ const ProductGallery = ({
           const productCards: ProductCardProps[] = response.data.products.map((product: Product) => ({
             id: product._id,
             image: product.images[0] || "",
-            category: product.category as "Bundles" | "Custom Wigs" | "Hair Care",
+            category: product.category,
             productName: product.name,
             whatsappMessage: WhatsAppMessages.productInquiry(product.name),
             priceLabel: `₦${product.price.toLocaleString()}`,

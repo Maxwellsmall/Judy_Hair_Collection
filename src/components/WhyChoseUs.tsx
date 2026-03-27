@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Truck, ShieldCheck, Gem, Wallet } from "lucide-react";
 

@@ -12,7 +12,20 @@
       "Bash(npx *)",
       "Bash(select-object *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(npm *)",
+      "Bash(findstr *)",
+      "Bash(remove-item *)",
+      "Bash(npm install)",
+      "Bash(rmdir *)",
+      "Bash(del *)",
+      "Bash(move *)",
+      "Bash(mkdir *)",
+      "Bash(git show *)",
+      "Bash(dir *)",
+      "Bash(copy *)",
+      "Bash(tasklist)",
+      "Bash(xcopy *)"
     ]
   },
   "$version": 3

@@ -1,7 +1,8 @@
-// API Client for BridAfriPride Design Backend
+// API Client for Judy Hair Collection Backend
 // This provides a clean interface for the frontend to interact with the backend
+// Uses relative URLs for Next.js API routes
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = '/api';
 
 // Types
 export interface Product {

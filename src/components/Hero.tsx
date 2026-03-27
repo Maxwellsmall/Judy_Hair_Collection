@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import Hair3 from "../assets/hair3.jpg";
 import { generateWhatsAppLink, WhatsAppMessages } from "../lib/whatsapp";
@@ -16,7 +18,7 @@ interface HeroProps {
 }
 
 const defaultProps: HeroProps = {
-  backgroundImage: Hair3,
+  backgroundImage: Hair3.src,
   title: "Judy Hair Collection",
   subtitle: "Premium Quality Wigs & Bundles",
   supportingText:

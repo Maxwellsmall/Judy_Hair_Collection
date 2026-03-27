@@ -9,20 +9,20 @@ const wishlist = [
     id: 1,
     name: "Bone Straight Wig",
     price: "₦50,000",
-    image: hair2,
+    image: hair2.src,
   },
   {
     id: 2,
     name: "Curly Wig",
     price: "₦45,000",
-    image: hair3,
+    image: hair3.src,
   },
 
   {
     id: 3,
     name: "Curly Wig",
     price: "₦45,000",
-    image: hair4
+    image: hair4.src
   },
 ];
 

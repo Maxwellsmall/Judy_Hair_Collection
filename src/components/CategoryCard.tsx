@@ -1,37 +1,20 @@
 import { ArrowRight } from "lucide-react";
-import { generateWhatsAppLink } from "@/lib/whatsapp";
+import Link from "next/link";
 
 export interface CategoryCardProps {
   name: string;
   slug?: string;
   image?: string;
   description?: string;
-  phoneNumber?: string;
 }
 
-/**
- * CategoryCard Component
- * 
- * Displays a category with image overlay and CTA.
- * Follows the BridAfriPride design spec.
- */
-const CategoryCard = ({
-  name,
-  image,
-  description,
-  phoneNumber = "2347068383089",
-}: CategoryCardProps) => {
-  const whatsappLink = generateWhatsAppLink(
-    phoneNumber,
-    `Hello, I'm interested in ${name} products.`
-  );
+const CategoryCard = ({ name, slug, image, description }: CategoryCardProps) => {
+  const href = slug ? `/category?category=${slug}` : "/category";
 
   return (
-    <a
-      href={whatsappLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-xl bg-neutral-200"
+    <Link
+      href={href}
+      className="group relative block overflow-hidden rounded-xl bg-neutral-200 cursor-pointer"
     >
       <div className="relative aspect-[4/3] sm:aspect-[2/1]">
         {image ? (
@@ -49,14 +32,10 @@ const CategoryCard = ({
         )}
 
         <div className="absolute inset-0 flex flex-col justify-end p-6">
-          <h3 className="text-2xl font-bold text-white font-heading">
-            {name}
-          </h3>
+          <h3 className="text-2xl font-bold text-white font-heading">{name}</h3>
 
           {description && (
-            <p className="mt-2 text-sm text-neutral-200 font-body">
-              {description}
-            </p>
+            <p className="mt-1 text-sm text-neutral-200 font-body">{description}</p>
           )}
 
           <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white w-fit transition-transform group-hover:translate-x-1">
@@ -65,7 +44,7 @@ const CategoryCard = ({
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

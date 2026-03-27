@@ -1,0 +1,504 @@
+
+> judy-hair-collection@1.0.0 build
+> next build
+
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+  ▲ Next.js 14.2.35
+  - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/16) ...
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/hairstyles". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+   Generating static pages (4/16) 
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin/dashboard". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin/upload". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin/login". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin/products". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+   Generating static pages (8/16) 
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin/settings". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/admin". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/category". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+   Generating static pages (12/16) 
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908) {
+  digest: '3944726509'
+}
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+
+Error occurred prerendering page "/about". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: Cannot read properties of null (reading 'useContext')
+    at t.useContext (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:109421)
+    at s (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:21384)
+    at h (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\669.js:1:13387)
+    at au (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:10446)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:15122
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+    at a_ (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:49776)
+    at ab (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:11808)
+    at C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16871
+    at aw (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:16908)
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at Q (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\pages.runtime.prod.js:16:5430)
+    at I (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\682.js:6:1263)
+    at renderWithHooks (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5732:15)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5957:7)
+    at renderNodeDestructiveImpl (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5696:3)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5954:7)
+
+Error occurred prerendering page "/404". Read more: https://nextjs.org/docs/messages/prerender-error
+
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at Q (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\pages.runtime.prod.js:16:5430)
+    at I (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\682.js:6:1263)
+    at renderWithHooks (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5732:15)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5957:7)
+    at renderNodeDestructiveImpl (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5696:3)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5954:7)
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at Q (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\pages.runtime.prod.js:16:5430)
+    at I (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\682.js:6:1263)
+    at renderWithHooks (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5732:15)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5957:7)
+    at renderNodeDestructiveImpl (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5696:3)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5954:7)
+
+Error occurred prerendering page "/500". Read more: https://nextjs.org/docs/messages/prerender-error
+
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at Q (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\next\dist\compiled\next-server\pages.runtime.prod.js:16:5430)
+    at I (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\.next\server\chunks\682.js:6:1263)
+    at renderWithHooks (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5732:15)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5957:7)
+    at renderNodeDestructiveImpl (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5696:3)
+    at renderElement (C:\Users\PASCHAL\Documents\GitHub\Judy_Hair_Collection\node_modules\react-dom\cjs\react-dom-server.browser.development.js:5954:7)
+ ✓ Generating static pages (16/16)
+
+> Export encountered errors on following paths:
+	/(site)/about/page: /about
+	/(site)/category/page: /category
+	/(site)/hairstyles/page: /hairstyles
+	/(site)/page: /
+	/_error: /404
+	/_error: /500
+	/_not-found/page: /_not-found
+	/admin/dashboard/page: /admin/dashboard
+	/admin/login/page: /admin/login
+	/admin/page: /admin
+	/admin/products/page: /admin/products
+	/admin/settings/page: /admin/settings
+	/admin/upload/page: /admin/upload

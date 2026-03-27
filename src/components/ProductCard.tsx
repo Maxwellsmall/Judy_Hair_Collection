@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { generateWhatsAppLink } from "../lib/whatsapp";
 
-export type ProductCategory = "Bundles" | "Custom Wigs" | "Hair Care";
+export type ProductCategory = string;
 
 export interface ProductCardProps {
   id: string;
@@ -67,7 +67,7 @@ const ProductCard = ({
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 w-fit"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 w-fit cursor-pointer"
         >
           Inquire
           <ArrowRight className="h-4 w-4" />
