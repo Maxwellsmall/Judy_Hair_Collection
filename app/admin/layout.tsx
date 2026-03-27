@@ -27,6 +27,12 @@ export default function AdminLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Don't check auth on the login page itself
+    if (pathname === "/admin/login") {
+      setLoading(false);
+      setIsLoggedIn(true); // let login page render freely
+      return;
+    }
     const checkAuth = async () => {
       try {
         const response = await authApi.getSession();
@@ -42,7 +48,7 @@ export default function AdminLayout({
       }
     };
     checkAuth();
-  }, [router]);
+  }, [router, pathname]);
 
   const handleLogout = async () => {
     try {
@@ -66,6 +72,11 @@ export default function AdminLayout({
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-neutral-900"></div>
       </div>
     );
+  }
+
+  // Render login page without the admin shell
+  if (pathname === "/admin/login") {
+    return <>{children}</>;
   }
 
   if (!isLoggedIn) {
