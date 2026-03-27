@@ -1,9 +1,7 @@
-
-import React, { useState } from "react";
 import { Heart } from "lucide-react";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
-
+import { useWishlist } from "../Context/WishlistContext";
 
 import hair1 from "../assets/hair1.jpg";
 import hair2 from "../assets/hair2.jpg";
@@ -22,16 +20,11 @@ const HairStyles = [
 ];
 
 const Products = () => {
-   const { addToCart } = useContext(CartContext);
-  const [wishlist, setWishlist] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
-  const toggleWishlist = (id) => {
-    if (wishlist.includes(id)) {
-      setWishlist(wishlist.filter((item) => item !== id));
-    } else {
-      setWishlist([...wishlist, id]);
-    }
-  };
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  // const inWishlist = isInWishlist(product.id);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -41,7 +34,7 @@ const Products = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
         {HairStyles.map((item) => {
-          const isLiked = wishlist.includes(item.id);
+          const inWishlist = isInWishlist(item.id);
 
           return (
             <div
@@ -55,17 +48,19 @@ const Products = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
 
-                <button
-                  onClick={() => toggleWishlist(item.id)}
-                  className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-300 z-10 
-                  ${
-                    isLiked
-                      ? "bg-red-500 text-white scale-110"
-                      : "bg-white text-black opacity-0 group-hover:opacity-100"
-                  }`}
-                >
-                  <Heart size={18} fill={isLiked ? "white" : "none"} />
-                </button>
+                <div className="absolute top-3 right-3 cursor-pointer">
+                  <Heart
+                    size={22}
+                    onClick={() =>
+                      inWishlist
+                        ? removeFromWishlist(item.id)
+                        : addToWishlist(item)
+                    }
+                    className={`transition ${
+                      inWishlist ? "text-red-500 fill-red-500" : "text-white"
+                    }`}
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col flex-grow">
@@ -75,8 +70,10 @@ const Products = () => {
                 </p>
 
                 <div className="mt-auto pt-5 space-y-3">
-                  <button 
-                   onClick={() => addToCart(item)}className="w-full border py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-150">
+                  <button
+                    onClick={() => addToCart(item)}
+                    className="w-full border py-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition duration-150"
+                  >
                     Add to Cart
                   </button>
 

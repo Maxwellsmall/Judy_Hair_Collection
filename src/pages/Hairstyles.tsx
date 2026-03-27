@@ -225,12 +225,12 @@ const Hairstyles = () => {
 
       <section className="py-20 text-center bg-black text-white">
         <h2 className="text-3xl mb-4">Ready to Find Your Style?</h2>
-        <a
-          href="/shop"
-        >
-          Shop Collection
-        </a>
+       
+      
+        <Link to="/category" className="">
         
+          Shop Collection
+        </Link>
 
       </section>
     </div>

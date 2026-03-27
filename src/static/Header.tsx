@@ -1,14 +1,14 @@
-import { useState } from "react";
 import { Heart, LucideShoppingCart } from "lucide-react";
 import logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
+import { useWishlist } from "../Context/WishlistContext";
 
 const Header = () => {
-   const { cart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
-  const [wishCount, setWishCount] = useState(3);
+  const { wishlist } = useWishlist();
 
   return (
     <>
@@ -40,25 +40,20 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <div className="relative cursor-pointer">
-            
-             <Link to="/wishlist">
-              <Heart size={24} />
-             </Link>
+              <Link to="/wishlist">
+                <Heart size={24} />
+              </Link>
 
-              {wishCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                  {wishCount}
-                </span>
-              )}
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                {wishlist.length}
+              </span>
             </div>
             <div className="relative cursor-pointer">
               <LucideShoppingCart size={24} />
 
-              
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                  {cart.length}
-                </span>
-              
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                {cart.length}
+              </span>
             </div>
 
             <a

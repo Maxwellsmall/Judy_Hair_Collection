@@ -1,16 +1,17 @@
-import AllScreen from "./routes/AllScreen"
+import AllScreen from "./routes/AllScreen";
 import CartProvider from "../src/Context/CartContext";
+import { WishlistProvider } from "./Context/WishlistContext";
 
 function App() {
-
   return (
     <>
       <CartProvider>
-        
-      <AllScreen />
-        </CartProvider>
+        <WishlistProvider>
+          <AllScreen />
+        </WishlistProvider>
+      </CartProvider>
     </>
   );
 }
 
-export default App
+export default App;
