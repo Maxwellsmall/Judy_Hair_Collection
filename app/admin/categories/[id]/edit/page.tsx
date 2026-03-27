@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import { categoriesApi, productsApi, Product } from '@/src/lib/api';
+import { categoriesApi, productsApi, Product } from '@/lib/api';
 import { generateSlug } from '../../../utils/slugGeneration';
 
 interface FormErrors {

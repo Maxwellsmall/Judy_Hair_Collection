@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { X, Loader2 } from 'lucide-react';
-import { categoriesApi, CategoryModel } from '@/src/lib/api';
+import { categoriesApi, CategoryModel } from '@/lib/api';
 import ImageUpload, { ImageUploadHandle } from '../../components/ImageUpload';
 
 const COMMON_TAGS = ['Straight', 'Curly', 'Wavy', 'Bob', 'Long', 'Short'];
