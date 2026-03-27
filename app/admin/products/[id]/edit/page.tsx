@@ -150,7 +150,9 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
         tags,
         features: features.split('\n').map((f) => f.trim()).filter(Boolean),
         colors: colors.split(',').map((c) => c.trim()).filter(Boolean),
-        sizes: sizes.split(',').map((s) => s.trim()).filter(Boolean),
+        sizes: sizes.split(',').map((s) => s.trim()).filter(Boolean).length > 0
+          ? sizes.split(',').map((s) => s.trim()).filter(Boolean)
+          : ['One Size'],
         featured,
         images: allImages,
       };
