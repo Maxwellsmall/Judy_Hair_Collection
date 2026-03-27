@@ -225,3 +225,40 @@ export const uploadApi = {
 export const healthCheck = async (): Promise<ApiResponse<Record<string, unknown>>> => {
   return apiRequest('/health');
 };
+
+// Category interfaces
+export interface CategoryModel {
+  _id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  color: string;
+  image?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CategoryInput {
+  name: string;
+  slug: string;
+  description?: string;
+  color: string;
+  image?: string;
+}
+
+// Categories API
+export const categoriesApi = {
+  getAll: () => apiRequest<{ categories: CategoryModel[] }>('/categories'),
+  getById: (id: string) => apiRequest<{ category: CategoryModel }>(`/categories/${id}`),
+  create: (data: CategoryInput) => apiRequest<{ category: CategoryModel }>('/categories', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }),
+  update: (id: string, data: Partial<CategoryInput>) => apiRequest<{ category: CategoryModel }>(`/categories/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }),
+  delete: (id: string) => apiRequest<void>(`/categories/${id}`, { method: 'DELETE' }),
+};

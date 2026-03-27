@@ -12,7 +12,9 @@ import {
   X,
   Upload,
   Settings,
+  FolderOpen,
 } from "lucide-react";
+import { Toaster } from "sonner";
 
 
 export default function AdminLayout({
@@ -62,6 +64,7 @@ export default function AdminLayout({
   const navItems = [
     { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
     { name: "Products", href: "/admin/products", icon: Package },
+    { name: "Categories", href: "/admin/categories", icon: FolderOpen },
     { name: "Upload", href: "/admin/upload", icon: Upload },
     { name: "Settings", href: "/admin/settings", icon: Settings },
   ];
@@ -164,8 +167,11 @@ export default function AdminLayout({
         </header>
 
         {/* Page Content */}
-        <main className="p-6">{children}</main>
+        <main className="p-6 bg-neutral-50">
+          <div className="max-w-6xl mx-auto">{children}</div>
+        </main>
       </div>
+      <Toaster />
     </div>
   );
 }

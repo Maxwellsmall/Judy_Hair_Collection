@@ -1,243 +1,179 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { productsApi, Product } from "../../../src/lib/api";
-import { Pencil, Trash2, Eye, EyeOff, Plus } from "lucide-react";
-
-
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Package, Plus } from 'lucide-react';
+import { toast } from 'sonner';
+import type { Product } from '../../../src/lib/api';
+import ProductCard from '../components/ProductCard';
+import ProductGridSkeleton from '../components/ProductGridSkeleton';
+import AdminProductSearch from '../components/AdminProductSearch';
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showAddModal, setShowAddModal] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+
+  const searchQuery = searchParams.get('search') ?? '';
+  const categoryParam = searchParams.get('category') ?? 'all';
+
+  // Sync activeCategory from URL on mount and when URL changes
+  useEffect(() => {
+    setActiveCategory(categoryParam);
+  }, [categoryParam]);
+
+  async function fetchProducts() {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/products?limit=200', { credentials: 'include' });
+      if (!res.ok) throw new Error('Failed to fetch products');
+      const json = await res.json();
+      setProducts(json.data?.products ?? json.products ?? []);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  const fetchProducts = async () => {
-    try {
-      const response = await productsApi.getAll({ limit: 100 });
-      if (response.success && response.data) {
-        setProducts(response.data.products);
-      }
-    } catch (error) {
-      console.error("Failed to fetch products:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // Derive unique category slugs from products
+  const categories = Array.from(
+    new Set(products.map((p) => p.categorySlug).filter(Boolean))
+  );
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this product?")) return;
+  // Client-side filtering
+  const filtered = products.filter((p) => {
+    const matchesSearch = searchQuery
+      ? p.name.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
+    const matchesCategory =
+      activeCategory === 'all' ? true : p.categorySlug === activeCategory;
+    return matchesSearch && matchesCategory;
+  });
 
-    try {
-      const response = await productsApi.delete(id);
-      if (response.success) {
-        setProducts(products.filter((p) => p._id !== id));
-      }
-    } catch (error) {
-      console.error("Failed to delete product:", error);
-    }
-  };
+  function handleDelete(id: string) {
+    setProducts((prev) => prev.filter((p) => p._id !== id));
+    toast.success('Product deleted');
+  }
 
-  const handleToggleFeatured = async (id: string, featured: boolean) => {
-    try {
-      const response = await productsApi.toggleFeatured(id, !featured);
-      if (response.success) {
-        setProducts(
-          products.map((p) =>
-            p._id === id ? { ...p, featured: !featured } : p
-          )
-        );
-      }
-    } catch (error) {
-      console.error("Failed to toggle featured:", error);
+  function handleFeaturedChange(id: string, featured: boolean) {
+    setProducts((prev) =>
+      prev.map((p) => (p._id === id ? { ...p, featured } : p))
+    );
+  }
+
+  function handleCategoryClick(slug: string) {
+    setActiveCategory(slug);
+    const params = new URLSearchParams(window.location.search);
+    if (slug === 'all') {
+      params.delete('category');
+    } else {
+      params.set('category', slug);
     }
-  };
+    window.history.pushState(null, '', `?${params.toString()}`);
+  }
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-8">
+    <div className="space-y-6">
+      {/* Page header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold font-heading text-neutral-900">
-            Products
-          </h1>
-          <p className="text-neutral-600 font-body mt-2">
-            Manage your product catalog
-          </p>
+          <h1 className="text-2xl font-bold text-neutral-900">Products</h1>
+          <p className="text-sm text-neutral-500 mt-0.5">Manage your product catalog</p>
         </div>
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 bg-neutral-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-neutral-800 transition-colors"
-        >
-          <Plus className="h-5 w-5" />
-          Add Product
-        </button>
+        <div className="flex items-center gap-3">
+          <AdminProductSearch defaultValue={searchQuery} />
+          <Link
+            href="/admin/products/new"
+            className="flex items-center gap-1.5 px-4 py-2 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-800 transition-colors whitespace-nowrap"
+          >
+            <Plus size={16} />
+            Add Product
+          </Link>
+        </div>
       </div>
 
-      {loading ? (
-        <div className="flex justify-center items-center py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-neutral-900"></div>
-        </div>
-      ) : products.length === 0 ? (
-        <div className="bg-white rounded-xl shadow-md p-12 text-center">
-          <Package className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-            No Products Yet
-          </h3>
-          <p className="text-neutral-600 mb-6">
-            Start by adding your first product
-          </p>
+      {/* Category filter bar */}
+      <div className="sticky top-0 z-10 bg-neutral-50 -mx-6 px-6 py-3 border-b border-neutral-100">
+        <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
           <button
-            onClick={() => setShowAddModal(true)}
-            className="bg-neutral-900 text-white px-6 py-2 rounded-lg font-semibold hover:bg-neutral-800 transition-colors"
+            onClick={() => handleCategoryClick('all')}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+              activeCategory === 'all'
+                ? 'bg-neutral-900 text-white'
+                : 'border border-neutral-300 text-neutral-600 hover:bg-neutral-100'
+            }`}
           >
-            Add Product
+            All
+          </button>
+          {categories.map((slug) => {
+            const label = products.find((p) => p.categorySlug === slug)?.category ?? slug;
+            return (
+              <button
+                key={slug}
+                onClick={() => handleCategoryClick(slug)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                  activeCategory === slug
+                    ? 'bg-neutral-900 text-white'
+                    : 'border border-neutral-300 text-neutral-600 hover:bg-neutral-100'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Content */}
+      {loading ? (
+        <ProductGridSkeleton />
+      ) : error ? (
+        <div className="rounded-xl border border-red-200 bg-red-50 p-8 text-center space-y-3">
+          <p className="text-sm font-medium text-red-700">{error}</p>
+          <button
+            onClick={fetchProducts}
+            className="px-4 py-2 text-sm font-medium rounded-lg bg-red-600 text-white hover:bg-red-700 transition-colors"
+          >
+            Retry
           </button>
         </div>
-      ) : (
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <table className="w-full">
-            <thead className="bg-neutral-50 border-b border-neutral-200">
-              <tr>
-                <th className="text-left py-4 px-6 text-sm font-semibold text-neutral-700">
-                  Product
-                </th>
-                <th className="text-left py-4 px-6 text-sm font-semibold text-neutral-700">
-                  Category
-                </th>
-                <th className="text-left py-4 px-6 text-sm font-semibold text-neutral-700">
-                  Price
-                </th>
-                <th className="text-center py-4 px-6 text-sm font-semibold text-neutral-700">
-                  Featured
-                </th>
-                <th className="text-right py-4 px-6 text-sm font-semibold text-neutral-700">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr
-                  key={product._id}
-                  className="border-b border-neutral-100 hover:bg-neutral-50"
-                >
-                  <td className="py-4 px-6">
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className="w-12 h-12 rounded-lg object-cover"
-                      />
-                      <div>
-                        <p className="font-medium text-neutral-900">
-                          {product.name}
-                        </p>
-                        <p className="text-sm text-neutral-500">
-                          {product.sizes.join(", ")}
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-sm text-neutral-600">
-                    {product.category}
-                  </td>
-                  <td className="py-4 px-6">
-                    <span className="font-semibold text-neutral-900">
-                      ₦{product.price.toLocaleString()}
-                    </span>
-                    {product.originalPrice && (
-                      <span className="ml-2 text-sm text-neutral-400 line-through">
-                        ₦{product.originalPrice.toLocaleString()}
-                      </span>
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    <button
-                      onClick={() =>
-                        handleToggleFeatured(product._id, product.featured)
-                      }
-                      className={`p-2 rounded-lg transition-colors ${
-                        product.featured
-                          ? "bg-amber-100 text-amber-700"
-                          : "bg-neutral-100 text-neutral-400 hover:text-neutral-600"
-                      }`}
-                      title={
-                        product.featured ? "Remove from featured" : "Add to featured"
-                      }
-                    >
-                      {product.featured ? (
-                        <Eye className="h-5 w-5" />
-                      ) : (
-                        <EyeOff className="h-5 w-5" />
-                      )}
-                    </button>
-                  </td>
-                  <td className="py-4 px-6 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <button
-                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        title="Edit"
-                      >
-                        <Pencil className="h-5 w-5" />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(product._id)}
-                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                        title="Delete"
-                      >
-                        <Trash2 className="h-5 w-5" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      ) : filtered.length === 0 ? (
+        <div className="rounded-xl border-2 border-dashed border-neutral-200 p-12 text-center space-y-3">
+          <Package size={40} className="mx-auto text-neutral-300" />
+          <p className="text-sm font-medium text-neutral-500">
+            {products.length === 0 ? 'No products yet' : 'No products match your filters'}
+          </p>
+          {products.length === 0 && (
+            <Link
+              href="/admin/products/new"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition-colors"
+            >
+              <Plus size={14} />
+              Add your first product
+            </Link>
+          )}
         </div>
-      )}
-
-      {/* Add Product Modal - Placeholder */}
-      {showAddModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b border-neutral-200 flex items-center justify-between sticky top-0 bg-white">
-              <h2 className="text-xl font-bold font-heading">Add Product</h2>
-              <button
-                onClick={() => setShowAddModal(false)}
-                className="p-2 hover:bg-neutral-100 rounded-lg"
-              >
-                <span className="text-2xl">&times;</span>
-              </button>
-            </div>
-            <div className="p-6">
-              <p className="text-neutral-600 text-center py-8">
-                Product creation form coming soon...
-              </p>
-            </div>
-          </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+              onDelete={handleDelete}
+              onFeaturedChange={handleFeaturedChange}
+            />
+          ))}
         </div>
       )}
     </div>
-  );
-}
-
-function Package({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-      />
-    </svg>
   );
 }
