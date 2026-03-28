@@ -45,3 +45,28 @@ export async function PATCH(
     return NextResponse.json({ success: false, message: 'Error updating review' }, { status: 500 });
   }
 }
+
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const cookieStore = cookies();
+    const admin = await protectAdmin(cookieStore);
+    if (!admin) {
+      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    }
+
+    await connectDB();
+
+    const review = await Review.findByIdAndDelete(params.id);
+    if (!review) {
+      return NextResponse.json({ success: false, message: 'Review not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, message: 'Review deleted' });
+  } catch (error) {
+    console.error('Error deleting review:', error);
+    return NextResponse.json({ success: false, message: 'Error deleting review' }, { status: 500 });
+  }
+}

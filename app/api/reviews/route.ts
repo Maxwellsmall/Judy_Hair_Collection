@@ -25,8 +25,17 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { reviewerName, rating, body: reviewBody } = body;
+    let payload: { reviewerName?: unknown; rating?: unknown; body?: unknown };
+    try {
+      payload = await request.json();
+    } catch {
+      return NextResponse.json(
+        { success: false, message: 'Invalid JSON body' },
+        { status: 400 }
+      );
+    }
+
+    const { reviewerName, rating, body: reviewBody } = payload;
 
     if (!reviewerName || rating === undefined || rating === null || !reviewBody) {
       return NextResponse.json(
@@ -35,21 +44,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+    const ratingNum = Number(rating);
+
+    if (!Number.isInteger(ratingNum) || ratingNum < 1 || ratingNum > 5) {
       return NextResponse.json(
         { success: false, message: 'Rating must be an integer between 1 and 5' },
         { status: 400 }
       );
     }
 
-    if (reviewBody.length > 500) {
+    const bodyStr = String(reviewBody);
+    const nameStr = String(reviewerName);
+
+    if (bodyStr.length > 500) {
       return NextResponse.json(
         { success: false, message: 'Review body cannot exceed 500 characters' },
         { status: 400 }
       );
     }
 
-    if (reviewerName.length > 100) {
+    if (nameStr.length > 100) {
       return NextResponse.json(
         { success: false, message: 'Reviewer name cannot exceed 100 characters' },
         { status: 400 }
@@ -59,15 +73,16 @@ export async function POST(request: NextRequest) {
     await connectDB();
 
     const review = await Review.create({
-      reviewerName,
-      rating,
-      body: reviewBody,
+      reviewerName: nameStr,
+      rating: ratingNum,
+      body: bodyStr,
       approved: false,
     });
 
     return NextResponse.json({ success: true, data: { review } }, { status: 201 });
   } catch (error) {
-    console.error('Error creating review:', error);
-    return NextResponse.json({ success: false, message: 'Error creating review' }, { status: 500 });
+    console.error('Error creating review:', JSON.stringify(error));
+    const message = error instanceof Error ? error.message : 'Error creating review';
+    return NextResponse.json({ success: false, message }, { status: 500 });
   }
 }

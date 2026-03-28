@@ -68,6 +68,7 @@ export default function Testimonials() {
   const [errors, setErrors] = useState<{ name?: string; rating?: string; body?: string }>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   useEffect(() => {
     fetch("/api/reviews?limit=6")
@@ -104,6 +105,7 @@ export default function Testimonials() {
 
       if (res.ok) {
         setSubmitStatus("success");
+        setHasSubmitted(true);
         setName("");
         setRating(null);
         setBody("");
@@ -119,13 +121,13 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="py-16 sm:py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 font-heading mb-3">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-neutral-600 font-body">
+          <p className="text-lg text-neutral-500 font-body">
             Real reviews from real customers
           </p>
         </div>
@@ -134,28 +136,53 @@ export default function Testimonials() {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="animate-pulse bg-neutral-100 rounded-xl h-40" />
+              <div key={i} className="animate-pulse bg-neutral-100 rounded-2xl h-48" />
             ))}
           </div>
         ) : reviews.length === 0 ? (
-          <p className="text-center text-neutral-500 font-body mb-12">
-            Be the first to leave a review.
+          <p className="text-center text-neutral-400 font-body mb-12 text-sm">
+            {hasSubmitted
+              ? "Your review is pending approval. Check back soon!"
+              : "Be the first to leave a review."}
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {reviews.map((review) => (
               <div
                 key={review._id}
-                className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-6"
+                className="relative flex flex-col gap-4 rounded-2xl bg-neutral-900 text-white p-6 shadow-lg"
               >
-                <StarDisplay rating={review.rating} />
-                <p className="text-neutral-700 font-body leading-relaxed">&ldquo;{review.body}&rdquo;</p>
-                <p className="text-sm font-semibold text-neutral-900">— {review.reviewerName}</p>
+                {/* Quote mark */}
+                <span className="absolute top-4 right-5 text-5xl leading-none text-white/10 font-serif select-none">&rdquo;</span>
 
+                {/* Stars */}
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i <= review.rating ? "fill-amber-400 text-amber-400" : "fill-white/20 text-white/20"}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Review text */}
+                <p className="text-sm text-white/80 leading-relaxed flex-1">
+                  {review.body}
+                </p>
+
+                {/* Reviewer */}
+                <div className="flex items-center gap-3 pt-2 border-t border-white/10">
+                  <div className="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center text-xs font-bold text-neutral-900 flex-shrink-0">
+                    {review.reviewerName.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="text-sm font-semibold text-white">{review.reviewerName}</span>
+                </div>
+
+                {/* Admin response */}
                 {review.adminResponse && (
-                  <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 p-3">
-                    <p className="text-xs font-semibold text-amber-700 mb-1">Response from the store</p>
-                    <p className="text-sm text-neutral-700">{review.adminResponse}</p>
+                  <div className="rounded-xl bg-white/10 border border-white/20 p-3 flex flex-col gap-1">
+                    <p className="text-xs font-semibold text-amber-400">Response from the store</p>
+                    <p className="text-xs text-white/70 leading-relaxed">{review.adminResponse}</p>
                   </div>
                 )}
               </div>
@@ -168,9 +195,21 @@ export default function Testimonials() {
           <h3 className="text-lg font-bold text-neutral-900 mb-4">Leave a Review</h3>
 
           {submitStatus === "success" ? (
-            <p className="text-green-700 font-medium text-center py-4">
-              Thank you! Your review has been submitted for approval.
-            </p>
+            <div className="text-center py-6 flex flex-col items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                <Star className="h-6 w-6 fill-green-500 text-green-500" />
+              </div>
+              <p className="text-green-700 font-semibold">Review submitted!</p>
+              <p className="text-sm text-neutral-500">
+                Thank you! Your review is pending approval and will appear here once approved.
+              </p>
+              <button
+                onClick={() => setSubmitStatus("idle")}
+                className="mt-2 text-sm text-neutral-600 underline hover:text-neutral-900"
+              >
+                Write another review
+              </button>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
               <div>

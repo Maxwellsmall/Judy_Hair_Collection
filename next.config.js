@@ -20,6 +20,10 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+    config.resolve.alias['@lib'] = path.resolve(__dirname, 'app/lib');
+    config.resolve.alias['@models'] = path.resolve(__dirname, 'app/models');
+    config.resolve.alias['@middleware'] = path.resolve(__dirname, 'app/middleware');
+    config.resolve.alias['@app'] = path.resolve(__dirname, 'app');
     return config;
   },
   experimental: {
