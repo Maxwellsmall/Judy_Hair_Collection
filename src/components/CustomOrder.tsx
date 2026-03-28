@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CustomOrder = () => {
   const whatsappLink = generateWhatsAppLink(
-    "2347068383089",
+    "393519420168",
     WhatsAppMessages.customOrder
   );
 

@@ -21,7 +21,7 @@ export default function HomePage() {
             Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
           <a
-            href="https://wa.me/2347068383089"
+            href="https://wa.me/393519420168"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-whatsapp-green px-8 py-4 font-semibold text-white transition-colors hover:bg-whatsapp-green/90 text-lg"

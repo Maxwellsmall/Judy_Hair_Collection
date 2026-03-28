@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { X, Loader2 } from 'lucide-react';
-import { categoriesApi, CategoryModel } from '@/lib/api';
+import { productsApi } from '@/lib/api';
+import type { Category } from '@/lib/api';
 import ImageUpload, { ImageUploadHandle } from '../../../components/ImageUpload';
 
 const COMMON_TAGS = ['Straight', 'Curly', 'Wavy', 'Bob', 'Long', 'Short'];
@@ -20,7 +21,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
   const router = useRouter();
   const imageUploadRef = useRef<ImageUploadHandle>(null);
 
-  const [categories, setCategories] = useState<CategoryModel[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [tagInput, setTagInput] = useState('');
@@ -38,15 +39,17 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
   const [sizes, setSizes] = useState('');
   const [featured, setFeatured] = useState(false);
 
+  const [newCategoryName, setNewCategoryName] = useState('');
+
   useEffect(() => {
     async function loadData() {
       try {
         const [categoriesRes, productRes] = await Promise.all([
-          categoriesApi.getAll(),
+          productsApi.getCategories(),
           fetch(`/api/products/${params.id}`, { credentials: 'include' }).then((r) => r.json()),
         ]);
 
-        let loadedCategories: CategoryModel[] = [];
+        let loadedCategories: Category[] = [];
         if (categoriesRes.success && categoriesRes.data) {
           loadedCategories = categoriesRes.data.categories;
           setCategories(loadedCategories);
@@ -65,9 +68,9 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
           setFeatured(!!p.featured);
           setImages(Array.isArray(p.images) ? p.images : []);
 
-          // Match category by name to find _id
-          const matched = loadedCategories.find((c) => c.name === p.category);
-          setCategory(matched?._id ?? '');
+          // Match category by slug
+          const matched = loadedCategories.find((c) => c.slug === p.categorySlug);
+          setCategory(matched?.slug ?? p.categorySlug ?? '');
         }
       } catch {
         toast.error('Failed to load product data');
@@ -104,6 +107,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
     if (!price || parseFloat(price) <= 0) newErrors.price = 'A valid price is required';
     if (!description.trim()) newErrors.description = 'Description is required';
     if (!category) newErrors.category = 'Category is required';
+    if (category === '__new__' && !newCategoryName.trim()) newErrors.category = 'Please enter a category name';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   }
@@ -138,15 +142,22 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
       const existingUrls = images.filter((url) => !url.startsWith('blob:'));
       const allImages = [...existingUrls, ...uploadedUrls];
 
-      const selectedCategory = categories.find((c) => c._id === category);
+      const selectedCategory = categories.find((c) => c.slug === category);
+      const isNewCategory = category === '__new__';
+      const categoryName = isNewCategory
+        ? newCategoryName.trim()
+        : (selectedCategory?.name ?? category);
+      const categorySlug = isNewCategory
+        ? categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+        : (selectedCategory?.slug ?? category);
 
       const body = {
         name: name.trim(),
         price: parseFloat(price),
         ...(originalPrice ? { originalPrice: parseFloat(originalPrice) } : {}),
         description: description.trim(),
-        category: selectedCategory?.name ?? category,
-        categorySlug: selectedCategory?.slug ?? '',
+        category: categoryName,
+        categorySlug,
         tags,
         features: features.split('\n').map((f) => f.trim()).filter(Boolean),
         colors: colors.split(',').map((c) => c.trim()).filter(Boolean),
@@ -269,9 +280,20 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
           >
             <option value="">Select a category</option>
             {categories.map((cat) => (
-              <option key={cat._id} value={cat._id}>{cat.name}</option>
+              <option key={cat.slug} value={cat.slug}>{cat.name}</option>
             ))}
+            <option value="__new__">+ Create new category</option>
           </select>
+          {category === '__new__' && (
+            <input
+              type="text"
+              value={newCategoryName}
+              onChange={(e) => setNewCategoryName(e.target.value)}
+              className="mt-2 w-full border border-neutral-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900"
+              placeholder="e.g. Skincare, Shoes, Home Decor"
+              autoFocus
+            />
+          )}
           {errors.category && <p className="text-xs text-red-600 mt-1">{errors.category}</p>}
         </div>
 

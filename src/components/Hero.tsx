@@ -62,7 +62,7 @@ const Hero = (props: Partial<HeroProps>) => {
   }, []);
 
   const whatsappLink = generateWhatsAppLink(
-    "2347068383089",
+    "393519420168",
     WhatsAppMessages.generalGreeting
   );
 

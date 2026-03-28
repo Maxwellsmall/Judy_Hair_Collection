@@ -6,13 +6,13 @@ import { generateWhatsAppLink, WhatsAppMessages } from "../../src/lib/whatsapp";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const whatsappLink = generateWhatsAppLink(
-    "2347068383089",
+    "393519420168",
     WhatsAppMessages.generalGreeting
   );
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/hairstyles" },
+    { name: "Products", href: "/products" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -25,9 +25,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://instagram.com/judyhair", icon: "📷" },
-    { name: "Facebook", href: "#", icon: "📘" },
-    { name: "Twitter", href: "#", icon: "🐦" },
+    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection", icon: "📷" },
+    { name: "TikTok", href: "https://www.tiktok.com/@judy.hair.collect", icon: "🎵" },
     { name: "WhatsApp", href: whatsappLink, icon: "💬" },
   ];
 

@@ -12,7 +12,7 @@ const Header = () => {
   const pathname = usePathname();
 
   const whatsappLink = generateWhatsAppLink(
-    "2347068383089",
+    "393519420168",
     WhatsAppMessages.generalGreeting
   );
 

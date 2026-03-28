@@ -18,7 +18,7 @@ export interface FloatingWhatsAppButtonProps {
  * @param position - Button position (defaults to bottom-right)
  */
 const FloatingWhatsAppButton = ({
-  phoneNumber = "2347068383089",
+  phoneNumber = "393519420168",
   defaultMessage = WhatsAppMessages.generalGreeting,
   position = "bottom-right",
 }: FloatingWhatsAppButtonProps) => {

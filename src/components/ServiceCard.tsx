@@ -21,7 +21,7 @@ const ServiceCard = ({
   description,
   iconUrl,
   whatsappMessage,
-  phoneNumber = "2347068383089",
+  phoneNumber = "393519420168",
 }: ServiceCardProps) => {
   const whatsappLink = generateWhatsAppLink(phoneNumber, whatsappMessage);
 

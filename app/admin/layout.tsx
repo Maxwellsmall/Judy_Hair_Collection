@@ -10,9 +10,9 @@ import {
   LogOut,
   Menu,
   X,
-  Upload,
   Settings,
   FolderOpen,
+  MessageSquare,
 } from "lucide-react";
 import { Toaster } from "sonner";
 
@@ -65,7 +65,7 @@ export default function AdminLayout({
     { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
     { name: "Products", href: "/admin/products", icon: Package },
     { name: "Categories", href: "/admin/categories", icon: FolderOpen },
-    { name: "Upload", href: "/admin/upload", icon: Upload },
+    { name: "Reviews", href: "/admin/reviews", icon: MessageSquare },
     { name: "Settings", href: "/admin/settings", icon: Settings },
   ];
 

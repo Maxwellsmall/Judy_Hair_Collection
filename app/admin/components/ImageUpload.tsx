@@ -56,10 +56,11 @@ const ImageUpload = forwardRef<ImageUploadHandle, ImageUploadProps>(
     setErrors(newErrors);
 
     if (newEntries.length > 0) {
-      const updated = [...pending, ...newEntries];
-      setPending(updated);
-      // Notify parent: existing URLs + blob preview URLs (upload happens on submit)
-      onChange([...value, ...updated.map((e) => e.preview)]);
+      const updatedPending = [...pending, ...newEntries];
+      setPending(updatedPending);
+      // Only pass existing confirmed URLs to parent — pending files are tracked internally
+      // Parent gets notified via onChange but we don't mix blob URLs into value
+      onChange(value); // keep existing URLs unchanged; pending tracked via ref
     }
   }
 
@@ -80,7 +81,8 @@ const ImageUpload = forwardRef<ImageUploadHandle, ImageUploadProps>(
     URL.revokeObjectURL(entry.preview);
     const updated = pending.filter((_, i) => i !== index);
     setPending(updated);
-    onChange([...value, ...updated.map((e) => e.preview)]);
+    // Don't touch value — only pending changed
+    onChange(value);
   }
 
   function removeExisting(index: number) {

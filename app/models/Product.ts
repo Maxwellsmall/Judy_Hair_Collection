@@ -11,6 +11,7 @@ export interface IProduct extends Document {
   sizes: string[];
   colors?: string[];
   images: string[];
+  videos?: string[];
   featured: boolean;
   tags?: string[];
   createdAt: Date;
@@ -70,6 +71,14 @@ const productSchema: Schema<IProduct> = new Schema(
       validate: {
         validator: (v: string[]) => v.length > 0 && v.length <= 10,
         message: 'Product must have between 1 and 10 images',
+      },
+    },
+    videos: {
+      type: [String],
+      default: [],
+      validate: {
+        validator: (v: string[]) => v.length <= 5,
+        message: 'Product cannot have more than 5 videos',
       },
     },
     featured: {

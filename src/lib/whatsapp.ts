@@ -5,7 +5,7 @@
  * All user actions (booking, buying, shipping negotiations) funnel to WhatsApp.
  */
 
-const PHONE_NUMBER = "2347068383089"; // Judy Hair Collection WhatsApp number
+const PHONE_NUMBER = "393519420168"; // Judy Hair Collection WhatsApp number
 
 /**
  * Generates a WhatsApp link with a pre-filled message

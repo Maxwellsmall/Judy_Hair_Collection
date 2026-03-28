@@ -1,36 +1,34 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { productsApi, Product } from "../../../src/lib/api";
+import { productsApi, Product, Category } from "../../../src/lib/api";
 import ProductCard from "../../../src/components/ProductCard";
 import { Filter, SlidersHorizontal } from "lucide-react";
 
-
-
 export default function HairstylesPage() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("newest");
 
+  // Fetch categories once
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await productsApi.getAll({
-          category: selectedCategory !== "all" ? selectedCategory : undefined,
-          sort: sortBy,
-        });
-        if (response.success && response.data) {
-          setProducts(response.data.products);
-        }
-      } catch (error) {
-        console.error("Failed to fetch products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    productsApi.getCategories().then((res) => {
+      if (res.success && res.data) setCategories(res.data.categories);
+    }).catch(console.error);
+  }, []);
 
-    fetchProducts();
+  // Fetch products when filter/sort changes
+  useEffect(() => {
+    setLoading(true);
+    productsApi.getAll({
+      category: selectedCategory !== "all" ? selectedCategory : undefined,
+      sort: sortBy,
+    }).then((res) => {
+      if (res.success && res.data) setProducts(res.data.products);
+    }).catch(console.error)
+      .finally(() => setLoading(false));
   }, [selectedCategory, sortBy]);
 
   return (
@@ -57,10 +55,9 @@ export default function HairstylesPage() {
               className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
             >
               <option value="all">All Categories</option>
-              <option value="bundles">Bundles</option>
-              <option value="custom-wigs">Custom Wigs</option>
-              <option value="hair-care">Hair Care</option>
-              <option value="accessories">Accessories</option>
+              {categories.map((cat) => (
+                <option key={cat.slug} value={cat.slug}>{cat.name}</option>
+              ))}
             </select>
           </div>
 
