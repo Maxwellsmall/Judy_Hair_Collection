@@ -22,8 +22,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection", icon: "📷" },
-    { name: "TikTok", href: "https://www.tiktok.com/@judy.hair.collect", icon: "🎵" },
+    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection?igsh=MzFhaGpoZXpqYzY0", icon: "📷" },
+    { name: "TikTok", href: "https://tiktok.com/@judy.hair.collect", icon: "🎵" },
     { name: "WhatsApp", href: whatsappLink, icon: "💬" },
   ];
 
@@ -111,7 +111,7 @@ const Footer = () => {
 
             <div className="mt-6 pt-6 border-t border-neutral-800">
               <p className="text-neutral-400 font-body text-sm">
-                <span className="font-semibold text-white">Location:</span> Lagos, Nigeria
+                <span className="font-semibold text-white">Location:</span> Genova, Italy
               </p>
             </div>
           </div>

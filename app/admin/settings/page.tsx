@@ -8,9 +8,9 @@ export default function SettingsPage() {
   const [settings, setSettings] = useState({
     storeName: "Judy Hair Collection",
     email: "admin@judyhaircollection.com",
-    phone: "+234 706 838 3089",
-    location: "Lagos, Nigeria",
-    whatsappNumber: "2347068383089",
+    phone: "+39 351 942 0168",
+    location: "Genova, Italy",
+    whatsappNumber: "393519420168",
   });
 
   const [saved, setSaved] = useState(false);

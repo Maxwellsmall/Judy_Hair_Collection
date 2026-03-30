@@ -68,12 +68,6 @@ const Header = () => {
               >
                 Contact Us
               </a>
-              <Link
-                href="/admin"
-                className="btn-small"
-              >
-                Admin
-              </Link>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -116,13 +110,6 @@ const Header = () => {
                 >
                   Contact Us
                 </a>
-                <Link
-                  href="/admin"
-                  className="btn-small"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Admin
-                </Link>
               </div>
             </nav>
           )}

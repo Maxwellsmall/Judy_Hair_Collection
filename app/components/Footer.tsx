@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { generateWhatsAppLink, WhatsAppMessages } from "../../src/lib/whatsapp";
+import { Instagram, Music2, MessageCircle, Facebook } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +13,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
+    { name: "Products", href: "/hairstyles" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -25,9 +26,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection", icon: "📷" },
-    { name: "TikTok", href: "https://www.tiktok.com/@judy.hair.collect", icon: "🎵" },
-    { name: "WhatsApp", href: whatsappLink, icon: "💬" },
+    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection?igsh=MzFhaGpoZXpqYzY0", icon: <Instagram className="w-5 h-5" /> },
+    { name: "TikTok", href: "https://tiktok.com/@judy.hair.collect", icon: <Music2 className="w-5 h-5" /> },
+    { name: "WhatsApp", href: whatsappLink, icon: <MessageCircle className="w-5 h-5" /> },
   ];
 
   return (
@@ -114,7 +115,7 @@ const Footer = () => {
 
             <div className="mt-6 pt-6 border-t border-neutral-800">
               <p className="text-neutral-400 font-body text-sm">
-                <span className="font-semibold text-white">Location:</span> Lagos, Nigeria
+                <span className="font-semibold text-white">Location:</span> Genova, Italy
               </p>
             </div>
           </div>

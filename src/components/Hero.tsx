@@ -22,7 +22,7 @@ const defaultProps: HeroProps = {
   title: "Judy Hair Collection",
   subtitle: "Premium Quality Wigs & Bundles",
   supportingText:
-    "Discover premium wigs and hairstyles designed to give you confidence and elegance. Up to 40% off on selected items.",
+    "Discover premium wigs and hairstyles designed to give you confidence and elegance.",
   primaryCtaText: "Shop Now",
   primaryCtaLink: "#products",
   secondaryCtaText: "Learn More",

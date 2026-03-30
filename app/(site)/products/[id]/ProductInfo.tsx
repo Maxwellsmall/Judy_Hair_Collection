@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
+import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 interface ProductInfoProps {
   product: {
@@ -31,21 +32,21 @@ export default function ProductInfo({ product }: ProductInfoProps) {
   const whatsappMessage = selectedSize
     ? `Hi, I'm interested in ${name} - Size: ${selectedSize}`
     : `Hi, I'm interested in ${name}`;
-  const whatsappHref = `https://wa.me/393519420168?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappHref = generateWhatsAppLink("393519420168", whatsappMessage);
 
   return (
     <div className="flex flex-col gap-6">
       {/* Name */}
-      <h1 className="text-2xl font-bold text-neutral-900 sm:text-3xl">{name}</h1>
+      <h1 className="text-2xl font-bold text-neutral-900 sm:text-3xl font-heading">{name}</h1>
 
       {/* Price */}
       <div className="flex items-center gap-3">
-        <span className="text-2xl font-bold text-neutral-900">{formattedPrice}</span>
+        <span className="text-2xl font-bold text-neutral-900 font-body">{formattedPrice}</span>
         {formattedOriginal && (
-          <span className="text-lg text-neutral-400 line-through">{formattedOriginal}</span>
+          <span className="text-lg text-neutral-400 line-through font-body">{formattedOriginal}</span>
         )}
         {discount && (
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-sm font-semibold text-amber-700">
+          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-sm font-semibold text-amber-700 font-body">
             -{discount}%
           </span>
         )}
@@ -53,16 +54,16 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
       {/* Description */}
       {description && (
-        <p className="text-base leading-relaxed text-neutral-600">{description}</p>
+        <p className="text-base leading-relaxed text-neutral-600 font-body">{description}</p>
       )}
 
       {/* Sizes */}
       {sizes.length > 0 && (
         <div className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-neutral-700">
+          <span className="text-sm font-semibold text-neutral-700 font-body">
             Size{selectedSize ? `: ${selectedSize}` : ""}
           </span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 font-body">
             {sizes.map((size) => (
               <button
                 key={size}
@@ -83,10 +84,10 @@ export default function ProductInfo({ product }: ProductInfoProps) {
       {/* Colors */}
       {colors && colors.length > 0 && (
         <div className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-neutral-700">
+          <span className="text-sm font-semibold text-neutral-700 font-body">
             Color{selectedColor ? `: ${selectedColor}` : ""}
           </span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 font-body">
             {colors.map((color) => (
               <button
                 key={color}
@@ -109,7 +110,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 rounded-lg bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-neutral-800"
+        className="inline-flex items-center justify-center gap-2 rounded-lg bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-neutral-800 font-body"
       >
         <MessageCircle className="h-5 w-5" />
         Contact to Purchase
