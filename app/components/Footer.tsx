@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { generateWhatsAppLink, WhatsAppMessages } from "../../src/lib/whatsapp";
-import { Instagram, Music2, MessageCircle, Facebook } from "lucide-react";
+import { Instagram, Music2, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,45 +26,55 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/judy_haircollection?igsh=MzFhaGpoZXpqYzY0", icon: <Instagram className="w-5 h-5" /> },
-    { name: "TikTok", href: "https://tiktok.com/@judy.hair.collect", icon: <Music2 className="w-5 h-5" /> },
-    { name: "WhatsApp", href: whatsappLink, icon: <MessageCircle className="w-5 h-5" /> },
+    { 
+      name: "Instagram", 
+      href: "https://www.instagram.com/judy_haircollection?igsh=MzFhaGpoZXpqYzY0", 
+      icon: <Instagram className="w-5 h-5" /> 
+    },
+    { 
+      name: "TikTok", 
+      href: "https://tiktok.com/@judy.hair.collect", 
+      icon: <Music2 className="w-5 h-5" /> 
+    },
+    { 
+      name: "WhatsApp", 
+      href: whatsappLink, 
+      icon: <MessageCircle className="w-5 h-5" /> 
+    },
   ];
 
   return (
-    <footer className="bg-neutral-900 text-white mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-neutral-900 text-white border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Brand Section */}
-          <div>
-            <h2 className="text-xl font-bold font-heading mb-4">
-              Judy Hair Collection
-            </h2>
-            <p className="text-neutral-400 font-body leading-relaxed mb-6">
-              Premium hair for confident and stylish women. Quality you can
-              trust.
+          <div className="space-y-6">
+            <Link href="/" className="inline-block">
+              <h2 className="text-2xl font-heading tracking-tight">
+                Judy Hair Collection
+              </h2>
+            </Link>
+            <p className="text-neutral-400 font-body leading-relaxed max-w-xs">
+              Exceptional quality for the modern woman. Experience the pinnacle of hair luxury and confidence.
             </p>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-whatsapp-green px-6 py-3 font-semibold text-white transition-colors hover:bg-whatsapp-green/90"
-            >
-              Chat on WhatsApp
-            </a>
+            <div className="pt-2">
+               <p className="text-neutral-500 font-body text-xs uppercase tracking-[0.2em]">
+                Premium Quality Wigs & Bundles
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold font-heading text-base mb-4">
-              Quick Links
+          <div className="space-y-6">
+            <h3 className="font-heading text-lg tracking-wide border-b border-white/10 pb-2 inline-block">
+              Navigation
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150"
+                    className="text-neutral-400 font-body hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -74,16 +84,16 @@ const Footer = () => {
           </div>
 
           {/* Customer Service */}
-          <div>
-            <h3 className="font-semibold font-heading text-base mb-4">
-              Customer Service
+          <div className="space-y-6">
+            <h3 className="font-heading text-lg tracking-wide border-b border-white/10 pb-2 inline-block">
+              Assistance
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {customerService.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150"
+                    className="text-neutral-400 font-body hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -93,37 +103,46 @@ const Footer = () => {
           </div>
 
           {/* Connect */}
-          <div>
-            <h3 className="font-semibold font-heading text-base mb-4">
+          <div className="space-y-6">
+            <h3 className="font-heading text-lg tracking-wide border-b border-white/10 pb-2 inline-block">
               Connect
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {socialLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-neutral-400 font-body hover:text-white transition-colors duration-150 flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-400 font-body hover:text-primary transition-colors duration-300 flex items-center gap-3 text-sm group"
                   >
-                    <span>{link.icon}</span>
+                    <span className="group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 pt-6 border-t border-neutral-800">
-              <p className="text-neutral-400 font-body text-sm">
-                <span className="font-semibold text-white">Location:</span> Genova, Italy
-              </p>
+            <div className="mt-8 pt-8 border-t border-white/5">
+              <div className="flex flex-col gap-1">
+                <span className="text-neutral-500 font-body text-[10px] uppercase tracking-widest">Global Headquarters</span>
+                <p className="text-neutral-300 font-body text-sm">
+                  Genova, Italy
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 font-body text-sm">
-          <p>&copy; {currentYear} Judy Hair Collection. All rights reserved.</p>
+        <div className="border-t border-white/5 mt-20 pt-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-neutral-500 font-body text-[11px] uppercase tracking-widest">
+            <p>&copy; {currentYear} Judy Hair Collection. Handcrafted Excellence.</p>
+            <div className="flex gap-8">
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

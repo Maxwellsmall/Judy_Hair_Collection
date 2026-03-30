@@ -1,15 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@fontsource-variable/geist";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
     /* Typography - Design Tokens (per spec) */
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Outfit', sans-serif;
-    --font-sans: 'Outfit', sans-serif;
+    --font-heading: var(--font-playfair), "Times New Roman", serif;
+    --font-body: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-sans: var(--font-inter), sans-serif;
     
     /* Primary Colors (per spec) */
     --color-neutral-50: #FAFAFA;
